@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de tarefas</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Gerenciador de tarefas</h1>
+    <div class="container">
+        <h1>Gerenciador de tarefas</h1>
 
-    <form>
-        
-        <input type="text" placeholder="Digite uma tarefa" required>
+        <form id="task-form">
 
-        <input type="text" placeholder="Descrição da tarefa">
+            <input id="title" type="text" placeholder="Digite uma tarefa" required>
 
-        <button>Enviar</button>
-    </form>
-    <ul> 
+            <input id="description" type="text" placeholder="Descrição da tarefa">
 
-    </ul>
+            <button type="submit">Enviar</button>
+        </form>
+        <ul id="task-list">
+
+        </ul>
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

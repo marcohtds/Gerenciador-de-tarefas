@@ -59,11 +59,23 @@ async function toggleCompleted(id, completed) {
         await fetch(`${apiUrl}/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify{(completed: | completed)}
+            // Corrected line is here ⬇️
+            body: JSON.stringify({completed: !completed }) 
         });
-loadTask();
+        loadTask();
     } catch (error) {
-    alert("Erro ao atualizar tarefa: " + error.message);
+        alert("Erro ao atualizar tarefa: " + error.message);
+    } 
 }
-    
+
+
+async function deleteTask(id) {
+    try {
+        await fetch(`${apiUrl}/${id}`,{
+            method: 'DELETE'
+        });
+        loadTask();
+    } catch (error) {
+        alert("Erro ao excluir tarefa: " + error.message);
+    }
 }
